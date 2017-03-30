@@ -1,0 +1,17 @@
+<div ng-init = UC.session() class = 'container'>
+	<h1>Hi {{UC.current_user.name}}!</h1>
+	<a href = '/#!/new_question'>Add a Question</a>
+	<a href = '#' ng-click = 'UC.logout()'>Logout</a>
+	<table class = 'table' ng-controller = 'QuestionsController as QC' ng-init = 'QC.index()'>
+		<tr>
+			<th>Question</th>
+			<th>Answers</th>
+			<th>Action</th>
+		</tr>
+		<tr ng-repeat = 'question in QC.questions'>
+			<td>{{question.question}}</td>
+			<td>{{question.answers.length}}</td>
+			<td><a href = '/#!/question/{{question._id}}'>Show</a> <a href = '/#!/new_answer/{{question._id}}'>Answer</a>
+		</tr>
+	</table>
+</div>

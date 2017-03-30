@@ -1,0 +1,19 @@
+<div ng-controller = 'QuestionsController as QC' class = 'container'>
+	<div ng-init = 'QC.show()'>
+		<a href = '/#!/dashboard'>Home</a>
+		<a href = '#' ng-click = 'UC.logout()'>Logout</a>
+		<a href = '/#!/question/{{QC.question._id}}'>Go Back to Question</a>
+		<h1>{{QC.question.question}}</h1>
+		<h3>{{QC.question.description}}</h3>
+		<div ng-controller = 'AnswersController as AC'>
+			<form ng-submit = 'AC.create(AC.newAnswer)' >
+				<div class = 'form-group'>
+					<label for = 'answer' >Your Answer: </label>
+					<textarea id = 'answer' class = 'form-control' ng-model = 'AC.newAnswer.answer'></textarea><br>
+				</div>
+				<input type="submit" value="Submit">
+			</form>
+		</div>
+	</div>
+</div>
+

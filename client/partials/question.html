@@ -1,0 +1,12 @@
+<div ng-controller = 'QuestionsController as QC' ng-init=QC.show(); class = 'container'>
+	<a href ='/#!/dashboard'>Home</a> | <a href = '/#!/new_answer/{{QC.question._id}}'>Answer this Question</a> | <a href = '#' ng-click = 'UC.logout()'>Logout</a>
+	<h3>{{QC.question.question}}</h3>
+	<h5>{{QC.question.description}}</h5>
+	<div ng-controller = 'AnswersController as AC' ng-init =  AC.index()>
+		<div ng-repeat =  'answer in AC.answers'>
+			{{answer._user.name}}:
+			{{answer.answer}}
+			{{answer.likes}} likes <button class = 'btn btn-default' ng-click='AC.like(answer._id)'>Like!</button>
+		</div>
+	</div>
+</div>
