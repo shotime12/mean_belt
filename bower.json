@@ -1,0 +1,14 @@
+{
+  "name": "belt_exam_mean",
+  "description": "",
+  "main": "server.js",
+  "authors": [
+    "Shovit Kandel <shovit.kandel@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/shotime12/mean_belt",
+  "dependencies": {
+    "angular-route": "^1.6.3",
+    "angular": "^1.6.3"
+  }
+}
